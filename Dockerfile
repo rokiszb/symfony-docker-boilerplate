@@ -9,7 +9,7 @@ ENV APP_HOME /var/www/html
 ARG UID=1000
 ARG GID=1000
 ENV USERNAME=www-data
-
+RUN usermod -u 1000 www-data
 
 # check environment
 RUN if [ "$BUILD_ARGUMENT_ENV" = "default" ]; then echo "Set BUILD_ARGUMENT_ENV in docker build-args like --build-arg BUILD_ARGUMENT_ENV=dev" && exit 2; \
